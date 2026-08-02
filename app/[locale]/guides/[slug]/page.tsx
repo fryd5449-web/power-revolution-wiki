@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   }
 
   const translation = getArticleTranslation(article, locale);
-  return { title: `${translation.title} | Power & Revolution Wiki`, description: translation.summary };
+  return { title: `${translation.title} | Power & Revolution Wiki`, description: translation.description };
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
