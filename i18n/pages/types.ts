@@ -1,5 +1,39 @@
 export type PageDictionary = {
   header: { categories: string; search: string; menu: string; close: string; language: string };
+  search: {
+    openSearch: string;
+    closeSearch: string;
+    dialogTitle: string;
+    placeholder: string;
+    shortcutHint: string;
+    startTyping: string;
+    quickDescription: string;
+    minimumCharacters: string;
+    popularSearches: string;
+    quickResultCount: string;
+    noQuickResults: string;
+    noQuickResultsDescription: string;
+    viewAllResults: string;
+    resultsTitle: string;
+    resultsFor: string;
+    resultCount: string;
+    categoryFilter: string;
+    allCategories: string;
+    difficultyFilter: string;
+    allDifficulties: string;
+    sortBy: string;
+    relevance: string;
+    newest: string;
+    noResultsTitle: string;
+    noResultsDescription: string;
+    suggestions: string;
+    suggestedCategories: string;
+    fallbackBadge: string;
+    fallbackNotice: string;
+    clearSearch: string;
+    navigateHint: string;
+    openHint: string;
+  };
   category: {
     eyebrow: string;
     guidesAvailable: string;

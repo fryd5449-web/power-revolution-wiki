@@ -6,6 +6,7 @@ import { dictionaries, languages } from "@/i18n";
 import { applyDocumentLocale, storeLocale } from "@/i18n/client";
 import { pageDictionaries } from "@/i18n/pages";
 import type { Locale } from "@/i18n/types";
+import { WikiSearch } from "@/components/wiki-search";
 
 export function LocalizedHeader({ locale }: { locale: Locale }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,11 +50,7 @@ export function LocalizedHeader({ locale }: { locale: Locale }) {
             <a href="/#categories">{pages.header.categories}</a>
           </nav>
           <div className="header-actions">
-            <label className="search-box">
-              <span className="search-icon" aria-hidden="true" />
-              <span className="sr-only">{pages.header.search}</span>
-              <input type="search" placeholder={home.header.searchPlaceholder} />
-            </label>
+            <WikiSearch locale={locale} />
             <label className="language-select">
               <span className="globe-icon" aria-hidden="true">◎</span>
               <span className="sr-only">{pages.header.language}</span>

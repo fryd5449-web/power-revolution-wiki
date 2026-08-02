@@ -22,7 +22,6 @@ import {
   MapPin,
   Menu,
   Scale,
-  Search,
   Shield,
   TrendingUp,
   Users,
@@ -31,6 +30,7 @@ import {
   Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { WikiSearch } from "@/components/wiki-search";
 import { dictionaries, directionFor, isLocale, languages } from "@/i18n";
 import { applyDocumentLocale, LOCALE_STORAGE_KEY, storeLocale } from "@/i18n/client";
 import type { Locale } from "@/i18n/types";
@@ -99,12 +99,7 @@ export function HomePage() {
           </nav>
 
           <div className="header-actions">
-            <label className="search-box">
-              <Search className="search-lucide" size={14} strokeWidth={1.8} aria-hidden="true" />
-              <span className="sr-only">{dictionary.accessibility.search}</span>
-              <input type="search" placeholder={dictionary.header.searchPlaceholder} />
-              <kbd>⌘ K</kbd>
-            </label>
+            <WikiSearch locale={locale} />
 
             <label className="language-select">
               <Languages className="globe-lucide" size={16} strokeWidth={1.8} aria-hidden="true" />
@@ -128,11 +123,6 @@ export function HomePage() {
           <span className="drawer-title">Power &amp; Revolution Wiki</span>
           <button type="button" onClick={() => setMenuOpen(false)} aria-label={dictionary.accessibility.closeMenu}><X size={19} /></button>
         </div>
-        <label className="mobile-search">
-          <Search className="search-lucide" size={15} strokeWidth={1.8} aria-hidden="true" />
-          <span className="sr-only">{dictionary.accessibility.search}</span>
-          <input type="search" placeholder={dictionary.header.searchPlaceholder} />
-        </label>
         <nav aria-label="Mobile navigation">
           {navLinks.map(([label, href], index) => {
             const NavIcon = navIcons[index];
